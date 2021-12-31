@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kalkulator</string>
+    <string name="shared_key">simplekalkukey </string>
+    <string name="username_key"> username </string>
+
+    <string name="key_hasil">saveHasil</string>
+
+</resources>

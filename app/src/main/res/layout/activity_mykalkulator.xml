@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:ignore="MissingConstraints"
+    tools:context=".mykalkulator">
+
+    <TextView
+        android:id="@+id/txtjudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Halo -username- "
+        android:textColor="#000000"
+        android:letterSpacing="0.07"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputangka1"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="28dp"
+        android:hint="Masukkan Angka Pertama"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtjudul" />
+
+
+    <EditText
+        android:id="@+id/inputangka2"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+
+        android:layout_marginTop="20dp"
+        android:hint="Masukkan Angka Ke Dua"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/btnhitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+
+
+        android:onClick="hasil"
+        android:text="Hitung"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputangka2"
+        tools:ignore="OnClick" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/listperhitungan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/hasilhitung"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="28dp"
+        app:layout_constraintTop_toBottomOf="@+id/inputangka1"
+        tools:layout_editor_absoluteX="0dp">
+
+        <RadioButton
+            android:id="@+id/rbTambah"
+            android:layout_width="76dp"
+            android:layout_height="36dp"
+
+            android:text="+"
+
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:layout_editor_absoluteX="28dp"
+            tools:layout_editor_absoluteY="138dp"
+            tools:ignore="OnClick" />
+
+        <RadioButton
+            android:id="@+id/rbKurang"
+            android:layout_width="79dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="12dp"
+            android:text="-"
+
+
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/radtambah"
+            tools:layout_editor_absoluteY="137dp"
+            tools:ignore="OnClick" />
+
+        <RadioButton
+            android:id="@+id/radKali"
+            android:layout_width="75dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:text="*"
+
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/radkurang"
+            tools:layout_editor_absoluteY="137dp"
+            tools:ignore="OnClick" />
+
+        <RadioButton
+            android:id="@+id/radBagi"
+            android:layout_width="75dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:text="/"
+
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/radkali"
+            tools:ignore="OnClick,TouchTargetSizeCheck"
+            tools:layout_editor_absoluteY="138dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/hasilhitung"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/btnhitung"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btnlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:onClick="logOut"
+        android:text="Keluar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listperhitungan"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
